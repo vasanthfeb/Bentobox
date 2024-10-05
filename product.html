@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Barn - Products</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <style>
+        header {
+            background-color: #333;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            width: 120px;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .product {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li class="active"><a href="./product.html">Products</a></li>
+                <li><a href="./account.html">Account</a></li>
+                <li><a href="./cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-5" style="color: #F480A5;">Products</h1>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="product">
+                    <img src="./img/Croissant & Coffee.jpg" alt="Croissant & Coffee" class="w-100">
+                    <h4 class="text-left pt-3 px-3">Croissant & Coffee</h4>
+                    <h6 class="px-3 pb-4">Flaky, buttery, and freshly baked</h6>
+                    <p class="text-left px-3">Price: <b>$10.00</b></p>
+                    <button onclick="addToCart('Croissant & Coffee', 10, './img/Croissant & Coffee.jpg')" class="btn btn-pink w-100">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="product">
+                    <img src="./img/choco eclair.jpeg" alt="Chocolate Éclair" class="w-100">
+                    <h4 class="text-left pt-3 px-3">Chocolate Éclair</h4>
+                    <h6 class="px-3 pb-4">Creamy, rich, and decadent</h6>
+                    <p class="text-left px-3">Price: <b>$10.00</b></p>
+                    <button onclick="addToCart('Chocolate Éclair', 10, './img/choco eclair.jpeg')" class="btn btn-pink w-100">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="product">
+                    <img src="./img/Fruit-Tart.jpg" alt="Fruit Tart" class="w-100">
+                    <h4 class="text-left pt-3 px-3">Fruit Tart</h4>
+                    <h6 class="px-3 pb-4">Tart, sweet, and bursting with flavor</h6>
+                    <p class="text-left px-3">Price: <b>$20.00</b></p>
+                    <button onclick="addToCart('Fruit Tart', 20, './img/Fruit-Tart.jpg')" class="btn btn-pink w-100">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more products as needed -->
+
+
+
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <div class="product">
+                        <img src="./img/Cinnamon Swirl.jpg" alt="Product 1" class="w-100">
+                        
+                        <h4 class="text-left pt-3 px-3"><b>Cinnamon Swirl</b></h4> 
+                        <h6 class="px-3 pb-4">Sweet, gooey, and utterly delicious</h6>
+                        <p class="text-left px-3">Price: <b>$10.00</b></p>
+                        <button onclick="addToCart('Cinnamon Swirl', 10 , './img/Cinnamon Swirl.jpg') " class="btn btn-pink w-100">Add to Cart</button>
+                    </div>
+                </div>
+        
+        
+                <div class="col-lg-4">
+                    <div class="product">
+                        <img src="./img/Pain au Chocolat.jpg" alt="Product 1" class="w-100">
+                        
+                        <h4 class="text-left pt-3 px-3"><b>Pain au Chocolat</b></h4>
+                        <h6 class="px-3 pb-4">Rich, chocolatey, and indulgent</h6>
+                        <p class="text-left px-3">Price: <b>$10.00</b></p>
+                        <button onclick="addToCart('Pain au Chocolat    ', 10 , './img/Pain au Chocolat.jpg') " class="btn btn-pink w-100">Add to Cart</button>
+                    </div>
+                </div>
+        
+        
+        
+        
+                <div class="col-lg-4">
+                    <div class="product">
+                        <img src="./img/Macarons.png" alt="Product 3" class="w-100">
+                        <h4 class="text-left pt-3 px-3"><b> Macarons</b></h4>
+                        <h6 class="px-3 pb-4">Delicate, chewy, and flavorful</h6>
+                        <p class="text-left px-3">Price: <b>$20.00</b></p>
+                        <button onclick="addToCart('Fruit Tart', 20, './img/Macarons.png')" class="btn btn-pink w-100">Add to Cart</button>
+                    </div>
+                </div>
+        
+        
+        
+        
+
+            </div>
+
+             <!-- Add more products as needed -->
+             <div class="row mt-5">
+                <div class="col-lg-4">
+                    <div class="product">
+                        <img src="./img/Cream Puff.webp" alt="Product 1" class="w-100">
+                        
+                        <h4 class="text-left pt-3 px-3"><b>Cream Puff</b></h4> 
+                        <h6 class="px-3 pb-4">Light, airy, and utterly delightful</h6>
+                        <p class="text-left px-3">Price: <b>$10.00</b></p>
+                        <button onclick="addToCart('Croissant And Coffee', 10 ,'./img/Cream Puff.webp') " class="btn btn-pink w-100">Add to Cart</button>
+                    </div>
+                </div>
+        
+        
+                <div class="col-lg-4">
+                    <div class="product">
+                        <img src="./img/Apple Strudel.jpg" alt="Product 1" class="w-100">
+                        
+                        <h4 class="text-left pt-3 px-3"><b>Apple Strudel</b></h4>
+                        <h6 class="px-3 pb-4">Tender, flaky, and full of flavor</h6>
+                        <p class="text-left px-3">Price: <b>$10.00</b></p>
+                        <button onclick="addToCart('Apple Strudel    ', 10 ,'./img/Apple Strudel.jpg') " class="btn btn-pink w-100">Add to Cart</button>
+                    </div>
+                </div>
+        
+        
+        
+        
+                <div class="col-lg-4">
+                    <div class="product">
+                        <img src="./img/Quiche Lorraine.jpg" alt="Product 3" class="w-100">
+                        <h4 class="text-left pt-3 px-3"><b>Quiche Lorraine</b></h4>
+                        <h6 class="px-3 pb-4">Savory, rich, and satisfying</h6>
+                        <p class="text-left px-3">Price: <b>$20.00</b></p>
+                        <button onclick="addToCart('Quiche Lorraine', 20 ,'./img/Quiche Lorraine.jpg')" class="btn btn-pink w-100">Add to Cart</button>
+                    </div>
+                </div>
+        
+        
+        
+        
+
+            </div>
+
+
+            <!-- Add more products as needed -->
+
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <div class="product">
+                        <img src="./img/Chocolate Mousse.jpg" alt="Product 1" class="w-100">
+                        
+                        <h4 class="text-left pt-3 px-3"><b>Chocolate Mousse</b></h4> 
+                        <h6 class="px-3 pb-4">Light, airy, and indulgent</h6>
+                        <p class="text-left px-3">Price: <b>$10.00</b></p>
+                        <button onclick="addToCart('Chocolate Mousse', 10 , './img/Chocolate Mousse.jpg') " class="btn btn-pink w-100">Add to Cart</button>
+                    </div>
+                </div>
+        
+        
+                <div class="col-lg-4">
+                    <div class="product">
+                        <img src="./img/Cheesecake.jpg" alt="Product 1" class="w-100">
+                        
+                        <h4 class="text-left pt-3 px-3"><b>Cheesecake</b></h4>
+                        <h6 class="px-3 pb-4">Creamy, rich, and utterly delightful</h6>
+                        <p class="text-left px-3">Price: <b>$10.00</b></p>
+                        <button onclick="addToCart('Cheesecake    ', 10 , './img/Cheesecake.jpg') " class="btn btn-pink w-100">Add to Cart</button>
+                    </div>
+                </div>
+        
+        
+        
+        
+                <div class="col-lg-4">
+                    <div class="product">
+                        <img src="./img/Tiramisu.jpg" alt="Product 3" class="w-100">
+                        <h4 class="text-left pt-3 px-3"><b>Tiramisu</b></h4>
+                        <h6 class="px-3 pb-4">Coffee-soaked, creamy, and divine</h6>
+                        <p class="text-left px-3">Price: <b>$20.00</b></p>
+                        <button onclick="addToCart('Tiramisu', 20 ,'./img/Tiramisu.jpg')" class="btn btn-pink w-100">Add to Cart</button>
+                    </div>
+                </div>
+        
+        
+        
+        
+
+            </div>
+
+
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <div class="product">
+                        <img src="./img/Cannoli.jpg" alt="Product 1" class="w-100">
+                        
+                        <h4 class="text-left pt-3 px-3"><b>Cannoli</b></h4> 
+                        <h6 class="px-3 pb-4">Crispy, fried, and indulgent</h6>
+                        <p class="text-left px-3">Price: <b>$10.00</b></p>
+                        <button onclick="addToCart('Cannoli', 10, './img/Cannoli.jpg') " class="btn btn-pink w-100">Add to Cart</button>
+                    </div>
+                </div>
+        
+        
+                <div class="col-lg-4">
+                    <div class="product">
+                        <img src="./img/Smores Tart.jpg" alt="Product 1" class="w-100">
+                        
+                        <h4 class="text-left pt-3 px-3"><b>S'mores Tart</b></h4>
+                        <h6 class="px-3 pb-4">Gooey, chocolatey, and utterly delightful</h6>
+                        <p class="text-left px-3">Price: <b>$10.00</b></p>
+                        <button onclick="addToCart('Smores Tart    ', 10 , './img/Smores Tart.jpg') " class="btn btn-pink w-100">Add to Cart</button>
+                    </div>
+                </div>
+        
+        
+        
+        
+                <div class="col-lg-4">
+                    <div class="product">
+                        <img src="./img/Short Cake.jpg" alt="Product 3" class="w-100">
+                        <h4 class="text-left pt-3 px-3"><b>Short Cake</b></h4>
+                        <h6 class="px-3 pb-4">Fresh, colorful</h6>
+                        <p class="text-left px-3">Price: <b>$20.00</b></p>
+                        <button onclick="addToCart('short Cake', 20 , './img/Short Cake.jpg')" class="btn btn-pink w-100">Add to Cart</button>
+                    </div>
+                </div>
+        
+        
+        
+        
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        function addToCart(name, price, imageUrl) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ name, price, quantity: 1, imageUrl });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${name} has been added to your cart!`);
+        }
+    </script>
+</body>
+</html>

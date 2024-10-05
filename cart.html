@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Barn - Cart</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <style>
+        header {
+            background-color: #333;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            width: 120px;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .total_tab {
+            border: 2px solid #F480A5 !important;
+        }
+        .cart-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .cart-item img {
+            width: 100px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./product.html">Products</a></li>
+                <li><a href="./account.html">Account</a></li>
+                <li class="active"><a href="./cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 class="text-center p-5" style="color: #F480A5;"><b>Cart</b></h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9" id="cart-items"></div>
+            <div class="col-lg-3 total_tab">
+                <h2>Total: $<span id="total-price">0.00</span></h2>
+                <br>
+                <button class="btn btn-pink mt-2"><a href="./checkout.html" class="text-light">Checkout</a></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsDiv = document.getElementById('cart-items');
+        const totalPriceSpan = document.getElementById('total-price');
+
+        function renderCart() {
+            cartItemsDiv.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `
+                    <img src="${item.imageUrl}" alt="${item.name}">
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p>Price: $${item.price}</p>
+                        <button onclick="changeQuantity(${index}, -1)" class="btn btn-info m-1">-</button>
+                        <span><b>${item.quantity}</b></span>
+                        <button onclick="changeQuantity(${index}, 1)" class="btn btn-info m-1">+</button>
+                        <button onclick="removeItem(${index})" class="btn btn-danger m-3">Remove</button>
+                    </div>
+                `;
+                cartItemsDiv.appendChild(itemDiv);
+                total += item.price * item.quantity;
+            });
+
+            totalPriceSpan.textContent = total.toFixed(2);
+        }
+
+        function changeQuantity(index, delta) {
+            if (delta === 1) {
+                cart[index].quantity++;
+            } else if (cart[index].quantity > 1) {
+                cart[index].quantity--;
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        renderCart();
+    </script>
+</body>
+</html>
